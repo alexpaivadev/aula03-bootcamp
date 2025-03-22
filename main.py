@@ -1,6 +1,11 @@
-idade: int = 30
-altura: float = 1.80
-nome: str = "João"
-is_estudante: bool = True
+import csv
 
-is_estudante
+caminho_arquivo = "Base Vendas Premier - Base.csv"
+
+with open(caminho_arquivo, mode='r', encoding='utf-8') as arquivo:
+    leitor_csv = csv.reader(arquivo, delimiter=',')
+    arquivo = []
+    for linha in leitor_csv:
+        arquivo.append(linha)
+
+print(arquivo)
